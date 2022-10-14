@@ -164,7 +164,7 @@
       body {
         font-family: Arial, Helvetica, sans-serif;
         display: grid;
-        grid-template-rows: auto repeat(2, 50vh) 100vh 50vh;
+        grid-template-rows: auto repeat(2, minmax(50vh, auto));
       }
 
       .header {
@@ -210,6 +210,7 @@
         transform: translateY(40%);
         font-size: 8rem;
         z-index: 2;
+        aspect-ratio: 1 / 1;
       }
 
       .hero .hero__buttons {
@@ -223,12 +224,18 @@
 
       section {
         position: relative;
-        padding: var(--spacing);
+        padding: calc(var(--spacing) * 2);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        margin: var(--spacing);
+
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
       }
 
       section:nth-child(odd) {
@@ -259,8 +266,6 @@
         border: none;
         font-size: 1rem;
         font-weight: bold;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-          0 2px 4px -2px rgb(0 0 0 / 0.1);
       }
 
       .button.button--lg {
@@ -317,7 +322,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 16px;
+        gap: 32px;
       }
 
       .form input:not([type="checkbox"]) {
@@ -331,9 +336,7 @@
       }
 
       footer {
-        padding: var(--spacing);
-        background-color: #334155;
-        color: white;
+        padding: calc(var(--spacing) * 2);
       }
 
       footer .footer__text {
