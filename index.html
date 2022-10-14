@@ -221,7 +221,7 @@
         z-index: 1;
       }
 
-      section {
+      section:not(.section__native) {
         position: relative;
         padding: var(--spacing);
         display: flex;
@@ -231,7 +231,7 @@
         text-align: center;
       }
 
-      section:nth-child(odd) {
+      section:not(.section__native):nth-child(odd) {
         background-color: var(--dark);
         color: white;
       }
@@ -454,7 +454,7 @@
         <input type="email" id="email" name="email" placeholder="Email" />
         <!-- What to use here instead of div dude -->
         <!-- Let's go with an article XD -->
-        <section>
+        <section class="section__native">
           <input type="checkbox" id="terms" name="terms" />
           <label for="terms">Akceptuję warunki i postanowienia</label>
         </section>
